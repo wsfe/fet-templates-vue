@@ -24,25 +24,30 @@
     },
     "dev61": {
       "host": "10.8.1.61",
-      "domain": "//static.example.com",
+      "domain": "//dev1.img.wangsu.com",
       "port": 63501,
       "local": "./",
-      "path": "/usr/local/share/vue-template",
+      "path": "/usr/local/nginx/{{ name }}",
       "sudo": false,
       "exclude": [
         "node_modules",
         "build",
-        ".gitignore",
-        "README.md",
-        "package.json",
-        "ft.config.js",
+        "config",
+        "src",{{#unit}}
+        "test",{{/unit}}
         "ver",
         "refs",
-        "src",
         "prd",
+        ".babelrc",
+        ".editorconfig",{{#lint}}
+        ".eslintignore",
+        ".eslintrc.js",{{/lint}}
+        ".gitignore",
+        ".postcssrc.js",
+        "package.json",
+        "README.md",
         ".cache",
-        ".vscode",
-        ".editorconfig"
+        ".vscode"
       ]
     }
   },
