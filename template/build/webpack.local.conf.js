@@ -66,7 +66,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       filename: utils.assetsPath('css/[name].css'),
       // Setting the following option to `false` will not extract CSS from codesplit chunks.
       // Their CSS will instead be inserted dynamically with style-loader when the codesplit chunk has been loaded by webpack.
-      // It's currently set to `true` because we are seeing that sourcemaps are included in the codesplit bundle as well when it's `false`, 
+      // It's currently set to `true` because we are seeing that sourcemaps are included in the codesplit bundle as well when it's `false`,
       // increasing file size: https://github.com/vuejs-templates/webpack/issues/1110
       allChunks: true,
     }),
@@ -103,8 +103,12 @@ module.exports = new Promise((resolve, reject) => {
     } else {
       // publish the new Port, necessary for e2e tests
       process.env.PORT = port
+
       // add port to devServer config
       devWebpackConfig.devServer.port = port
+
+      // add port to local publicPath
+      devWebpackConfig.output.publicPath = `//${devWebpackConfig.devServer.host}:${port}${devWebpackConfig.output.publicPath}`
 
       // Add FriendlyErrorsPlugin
       devWebpackConfig.plugins.push(new FriendlyErrorsPlugin({

@@ -135,6 +135,25 @@ const webpackConfig = merge(baseWebpackConfig, {
           return manifest
         }, seed)
       }
+    }),
+    new ManifestPlugin({
+      fileName: 'version.mapping',
+      serialize: function (manifest) {
+        var mapping = ''
+        for (var file in manifest) {
+          mapping += (file + '#' + manifest[file] + '\n')
+        }
+        return mapping
+      },
+      filter: function (file) {
+        return /.*\.(js|css)$/.test(file.path) && !/.*(\/\d+\.(chunk)).*\.(js|css)$/.test(file.path) && file.name !== 'vendor-async.js'
+      },
+      generate: function (seed, files) {
+        return files.reduce(function (manifest, file) {
+          manifest[file.name] = file.path.match(FILE_NAME_REG)[2]
+          return manifest
+        }, seed)
+      }
     })
   ]
 })
