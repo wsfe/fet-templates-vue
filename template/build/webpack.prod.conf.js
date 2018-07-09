@@ -137,7 +137,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       }
     }),
     new ManifestPlugin({
-      fileName: 'version.mapping',
+      fileName: 'versions.mapping',
       serialize: function (manifest) {
         var mapping = ''
         for (var file in manifest) {
