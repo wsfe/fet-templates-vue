@@ -30,13 +30,11 @@ npm run build --report
 # 打包到制定的域名
 npm run build --server=serverName
 
-{{#unit}}
 # run unit tests
 npm run unit
 
 # run all tests
 npm test
-{{/unit}}
 ```
 
 # servers配置说明
@@ -44,11 +42,11 @@ npm test
 {
   "servers": {
     "serverName": { // 服务器名称
-      "host": "10.8.1.61", // sync到远程的服务器ip
+      "host": "1.1.1.1", // sync到远程的服务器ip
       "domain": "//static.example.com", // 服务器对应的域名
       "port": 22, // 服务器的ssh端口
       "local": "./", // sync那个目录下面的文件，默认是当前目录下面
-      "path": "/usr/local/share/vue-template", // sync到服务器的那个地址
+      "path": "/usr/local/share/{{ name }}", // sync到服务器的那个地址
       "sudo": false, // 是否开启sudo权限
       "user": "sshName", // 登录服务器的ssh账号，默认获取电脑名称。
       "exclude": ["node_modules", "build", ".gitignore", "README.md", "package.json", "ft.config.js", "ver", "refs", "src", "prd", ".cache", ".vscode", ".editorconfig"] // 哪些文件不需要传到服务器

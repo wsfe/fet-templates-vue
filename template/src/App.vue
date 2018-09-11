@@ -1,25 +1,24 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    {{#router}}
     <router-view/>
-    {{else}}
-    <HelloWorld/>
-    {{/router}}
   </div>
 </template>
 
 <script>
-{{#unless router}}
-import HelloWorld from './components/HelloWorld'
-
-{{/unless}}
-
 export default {
-  name: 'App'{{#router}}{{else}},
-  components: {
-    HelloWorld
-  }{{/router}}
+  name: 'App',
+  methods: {
+    attachEvents () {
+      global.vbus.$on('global.$Message.show', (msg) => {
+        console.log(msg)
+      })
+    }
+  },
+  created () {
+    this.attachEvents()
+    this.$store.dispatch('updateUserInfo')
+  }
 }
 </script>
 
