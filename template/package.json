@@ -14,7 +14,6 @@
     "lint": "eslint --ext .js,.vue src test/unit",
     "build": "node build/build.js --server=online",
     "build:beta": "node build/build.js --server=beta",
-    "commitmsg": "commitlint -E GIT_PARAMS",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "servers": {
@@ -28,34 +27,13 @@
       "host": "1.1.1.1",
       "domain": "//static.example.com",
       "port": 8080,
-      "local": "./",
-      "path": "/usr/local/nginx/{{ name }}",
-      "sudo": false,
-      "exclude": [
-        "node_modules",
-        "build",
-        "config",
-        "src",
-        "test",
-        "ver",
-        "refs",
-        "prd",
-        ".babelrc",
-        ".commitlintrc.js",
-        ".editorconfig",
-        ".eslintignore",
-        ".eslintrc.js",
-        ".gitignore",
-        ".postcssrc.js",
-        "package.json",
-        "README.md",
-        ".cache",
-        ".vscode"
-      ]
+      "local": "./dev",
+      "path": "/usr/local/nginx/{{ name }}/dev",
+      "sudo": false
     }
   },
   "dependencies": {
-    "iview": "^2.14.3",
+    "iview": "^3.1.2",
     "axios": "^0.18.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
@@ -103,6 +81,8 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-spec-reporter": "0.0.31",
     "karma-webpack": "^2.0.2",
+    "less": "2.7.3",
+    "less-loader": "^4.1.0",
     "mocha": "^3.2.0",
     "chai": "^4.1.2",
     "sinon": "^4.0.0",
