@@ -5,6 +5,7 @@ import inject from '@/plugins/inject'
 import App from './App'
 import '@/directives'
 import '@/filters'
+import '@/styles/index.less'
 
 global.vbus = new Vue()
 Vue.config.productionTip = false
