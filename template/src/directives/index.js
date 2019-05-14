@@ -1,4 +1,4 @@
-// import Vue from 'vue'
-// import highlight from './highlight'
+import Vue from 'vue'
+import highlight from './highlight'
 
-// Vue.directive('highlight', highlight)
+Vue.directive('highlight', highlight)

@@ -1,4 +1,0 @@
-{
-  "src/**/*.{js,vue}": ["eslint --fix", "git add"],
-  "test/unit/**/*.{js,vue}": ["eslint --fix", "git add"]
-}

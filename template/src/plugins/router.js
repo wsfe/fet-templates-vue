@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import ROUTES from '@/routes'
 import { ROUTER_DEFAULT_CONFIG } from '@/config'
-import { routerBeforeEachFunc } from '@/config/interceptors'
+import { routerBeforeEachFunc, routerAfterEachFunc } from '@/config/interceptors'
 
 Vue.use(VueRouter)
 
@@ -13,5 +13,6 @@ let routerInstance = new VueRouter({
 })
 // 注入拦截器
 routerInstance.beforeEach(routerBeforeEachFunc)
+routerInstance.afterEach(routerAfterEachFunc)
 
 export default routerInstance

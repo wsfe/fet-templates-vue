@@ -2,7 +2,7 @@ import axios from './axios'
 import { API_DEFAULT_CONFIG } from '@/config'
 import API_CONFIG from '@/service/api'
 import { assert } from '@/utils'
-import { pick, assign, isEmpty } from 'lodash'
+import { assign, isEmpty, pick } from 'lodash'
 
 class MakeApi {
   constructor (options) {

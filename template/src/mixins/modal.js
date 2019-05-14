@@ -1,7 +1,7 @@
 
 export default {
   props: {
-    visible: {
+    value: {
       type: Boolean,
       default: false,
       required: true
@@ -9,17 +9,19 @@ export default {
   },
   data () {
     return {
-      modal: this.visible
+      show: this.visible
     }
   },
   watch: {
-    visible (newValue) {
-      this.modal = newValue
-    }
-  },
-  methods: {
-    handleVisibleChange (visible) {
-      this.$emit('update:visible', visible)
+    value (val) {
+      if (val !== this.show) {
+        this.show = val
+      }
+    },
+    show (val) {
+      if (val !== this.value) {
+        this.$emit('input', val)
+      }
     }
   }
 }

@@ -5,6 +5,7 @@ import inject from '@/plugins/inject'
 import App from './App'
 import '@/directives'
 import '@/filters'
+import '@/mixins'
 import '@/styles/index.less'
 
 global.vbus = new Vue()
@@ -17,6 +18,5 @@ new Vue({
   el: '#app',
   router,
   store,
-  components: { App },
-  template: '<App/>'
+  ...App
 })

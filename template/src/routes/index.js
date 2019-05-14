@@ -1,9 +1,15 @@
+import MainLayout from '@/layout/MainLayout'
 import PageA from '@/modules/moduleA/pageA'
 
 export default [
   {
     path: '/',
-    name: 'PageA',
-    component: PageA
+    component: MainLayout,
+    redirect: {
+      name: 'PAGEA'
+    },
+    children: [
+      { path: 'a', name: 'PAGEA', component: PageA }
+    ]
   }
 ]

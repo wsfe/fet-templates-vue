@@ -1,4 +1,4 @@
-// import Vue from 'vue'
-// import daterange from './daterange'
+import Vue from 'vue'
+import daterange from './daterange'
 
-// Vue.filter('daterange', daterange)
+Vue.filter('daterange', daterange)
