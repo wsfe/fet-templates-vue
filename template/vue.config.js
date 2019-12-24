@@ -20,7 +20,7 @@ function getPublicPath () {
   } else if (process.env.NODE_ENV === 'test') {
     return `/${packageJson.name}/prd/`
   } else {
-    return `//localhost/${packageJson.name}/prd/`
+    return `//localhost:${argv.port || 8080}/${packageJson.name}/prd/`
   }
 }
 

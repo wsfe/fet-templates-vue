@@ -59,7 +59,7 @@ module.exports = {
     /* config.plugin('lodash') */
     config
       .plugin('lodash')
-      .use(LodashPlugin)
+      .use(LodashPlugin, [{ shorthands: [] }]) // 加shorthannds是因为该插件会替换掉_baseIteratee，无法实现数据类型的转换而导致出错
     /* config.plugin('extract-css') */
     config.plugin('extract-css') // 重命名提取的css
       .tap(args => {
