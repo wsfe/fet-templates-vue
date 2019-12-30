@@ -1,4 +1,4 @@
 import Vue from 'vue'
-import highlight from './highlight'
+import permission from './permission'
 
-Vue.directive('highlight', highlight)
+Vue.directive('permission', permission)

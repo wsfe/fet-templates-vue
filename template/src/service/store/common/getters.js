@@ -1,3 +1,3 @@
 export default {
-  userName: state => state.userName
+  dataMap: state => state.dataMap
 }

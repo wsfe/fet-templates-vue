@@ -1,8 +1,13 @@
+const SET_DATA_MAP = 'SET_DATA_MAP' // 设置数据字典
+
 export const state = {
-  userName: ''
+  dataMap: {}
 }
 export const mutations = {
-  setUserName (state, val) {
-    state.userName = val
+  [SET_DATA_MAP] (state, dataMap) {
+    state.dataMap = {
+      ...state.dataMap,
+      ...dataMap
+    }
   }
 }

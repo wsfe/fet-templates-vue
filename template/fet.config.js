@@ -6,9 +6,9 @@ module.exports = {
     "beta": {
       "domain": "//static.beta.com"
     },
-    "dev1": {
+    "dev": {
       "host": "1.1.1.1",
-      "domain": "//static.dev1.com",
+      "domain": "//static.dev.com",
       "port": 22,
       "local": "./",
       "path": "/usr/local/nginx/{{ name }}",

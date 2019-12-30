@@ -3,8 +3,7 @@
     v-bind="tableProps"
     :loading="loading"
     :data="store.rows"
-    ref="table"
-  >
+    ref="table">
     <div slot="header">
       <slot name="header"></slot>
     </div>

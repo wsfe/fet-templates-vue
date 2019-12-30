@@ -9,7 +9,18 @@
     <div id="app"></div>
     <script>
        window.globalConfig = {
-        baseURL: '//static.mock.com/105'
+        baseURL: '//static.mock.com/105', // 数据接口基础路径
+        routeBaseUrl: '/', // history模式下的路由基础路径
+        signOutUrl: '/signOut',
+        userInfo: {
+          userName: 'laowang'
+        },
+        portalMenu: [
+          { "pCode": "0", "code": "PAGEA", "cn": "pageA", "show": 1 }
+        ],
+        portalFunc: {
+          "PAGEA": ['SAVE']
+        }
       }
     </script>
     <!-- built files will be auto injected -->

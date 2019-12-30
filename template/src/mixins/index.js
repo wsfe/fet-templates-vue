@@ -1,4 +1,4 @@
-// import Vue from 'vue'
-// import dataMap from './dataMap'
+import Vue from 'vue'
+import dataMap from './dataMap'
 
-// Vue.mixin(dataMap)
+Vue.mixin(dataMap)

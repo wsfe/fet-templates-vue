@@ -1,9 +1,9 @@
 export default [
   {
-    name: 'userInfo',
+    name: 'datamap',
     method: 'GET',
-    path: '/common/userInfo',
+    path: '/dicts/:category',
     params: {},
-    desc: '用户信息'
+    desc: '数据字典'
   }
 ]
