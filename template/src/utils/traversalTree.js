@@ -3,7 +3,7 @@ export default function traversalTree (nodes, callback) {
     const node = nodes[i]
     callback(node)
     if (node.children) {
-      traversalTree(node.children)
+      traversalTree(node.children, callback)
     }
   }
 }

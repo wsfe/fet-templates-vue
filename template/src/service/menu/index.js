@@ -3,7 +3,7 @@ import buildTree from '@/utils/buildTree'
 // 数据来源
 const portalMenu = window.globalConfig.portalMenu
 
-let menuMap = {}
+const menuMap = {}
 let menuData = {}
 
 menuData = buildTree(portalMenu, {
@@ -46,7 +46,8 @@ function getRecentVisibleParent (pNames) {
   return res
 }
 
-export default {
-  menuData,
+export {
   menuMap
 }
+
+export default menuData
