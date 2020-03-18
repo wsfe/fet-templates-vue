@@ -1,7 +1,7 @@
 import Vue from 'vue'
+import inject from '@/plugins/inject'
 import router from '@/plugins/router'
 import store from '@/plugins/store'
-import inject from '@/plugins/inject'
 import App from './App'
 import '@/directives'
 import '@/filters'
