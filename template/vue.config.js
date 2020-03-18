@@ -24,6 +24,13 @@ function getPublicPath () {
   }
 }
 
+function getEnv (env) {
+  if (['development', 'joint', 'production', 'test'].indexOf(env) > -1) {
+    return env
+  }
+  return 'development'
+}
+
 module.exports = {
   publicPath: getPublicPath(),
   outputDir: process.env.NODE_ENV === 'joint' ? resolve('dev') : resolve('prd'),
@@ -47,7 +54,7 @@ module.exports = {
     }
   },
   configureWebpack (config) {
-    buildConfig[process.env.NODE_ENV].configureWebpack(config)
+    buildConfig[getEnv(process.env.NODE_ENV)].configureWebpack(config)
   },
   chainWebpack (config) {
     config.plugins.delete('preload')
@@ -65,7 +72,6 @@ module.exports = {
       .set('api', resolve('src/api'))
       .set('assets', resolve('src/assets'))
       .set('mixins', resolve('src/mixins'))
-
-    buildConfig[process.env.NODE_ENV].chainWebpack(config)
+    buildConfig[getEnv(process.env.NODE_ENV)].chainWebpack(config)
   }
 }
